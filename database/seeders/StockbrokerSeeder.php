@@ -9,7 +9,7 @@ class StockbrokerSeeder extends Seeder
 {
     public function run()
     {
-        $stockbrokers = [
+        $entities = [
             [
                 'name' => 'NuInvest',
                 'full_name' => 'NuInvest Corretora de Valores S.A',
@@ -27,8 +27,8 @@ class StockbrokerSeeder extends Seeder
             ]
         ];
 
-        foreach ($stockbrokers as $stockbroker) {
-            Stockbroker::firstOrcreate($stockbroker);
+        foreach ($entities as $entity) {
+            Stockbroker::firstOrcreate($entity);
         }
     }
 }

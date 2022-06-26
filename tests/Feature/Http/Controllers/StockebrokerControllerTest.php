@@ -1,12 +1,12 @@
 <?php
 
-namespace Tests\Feature;
+namespace Tests\Feature\Http\Controllers;
 
 use Tests\TestCase;
 use App\Models\Stockbroker;
 use Illuminate\Testing\Fluent\AssertableJson;
 
-class StockebrokerTest extends TestCase
+class StockebrokerControllerTest extends TestCase
 {
     public function test_get_stockebrokers()
     {
