@@ -13,12 +13,17 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('fund_managers', function (Blueprint $table) {
+        Schema::create('investment_funds', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('fund_manager_id')->unsigned();
+            $table->string('code')->unique();
             $table->string('name');
             $table->string('cnpj')->unique();
-            $table->string('site')->nullable();
+            $table->string('type');
+            $table->string('segment');
             $table->timestamps();
+
+            $table->foreign('fund_manager_id')->references('id')->on('fund_managers');
         });
     }
 
@@ -29,6 +34,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('fund_managers');
+        Schema::dropIfExists('investment_funds');
     }
 };
