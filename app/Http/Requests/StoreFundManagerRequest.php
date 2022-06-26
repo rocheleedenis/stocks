@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreCompanyRequest extends FormRequest
+class StoreFundManagerRequest extends FormRequest
 {
     public function authorize() : bool
     {
@@ -15,10 +15,8 @@ class StoreCompanyRequest extends FormRequest
     {
         return [
             'name' => 'required|string',
-            'full_name' => 'required|string',
             'cnpj' => 'required|string',
-            'sector' => 'required|string',
-            'subsector' => 'required|string',
+            'site' => 'required|string',
         ];
     }
 }
