@@ -16,15 +16,6 @@ class InvestmentFund extends Model
         'Híbrido',
     ];
 
-    const SEGMENTS = [
-        'Logística',
-        'Híbrido',
-        'Shoppings',
-        'Lajes Corporativas',
-        'Outros',
-        'Títulos e Val. Mob.',
-    ];
-
     protected $fillable = [
         'name',
         'cnpj',
