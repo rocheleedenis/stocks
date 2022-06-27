@@ -13,6 +13,7 @@ class DatabaseSeeder extends Seeder
             StockbrokerSeeder::class,
             CompaniesSeerder::class,
             FundManagerSeeder::class,
+            InvestmentFundSegmentSeeder::class,
             InvestmentFundSeeder::class,
         ]);
     }
