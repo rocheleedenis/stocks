@@ -15,12 +15,14 @@ return new class extends Migration
     {
         Schema::create('companies', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('sector_id')->unsigned();
             $table->string('name');
             $table->string('cnpj')->unique();
             $table->string('full_name');
-            $table->string('sector');
             $table->string('subsector');
             $table->timestamps();
+
+            $table->foreign('sector_id')->references('id')->on('company_sectors');
         });
     }
 
