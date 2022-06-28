@@ -15,7 +15,9 @@ class CompanyFactory extends Factory
             'full_name' => $fullName,
             'cnpj' => (string) $this->faker->randomNumber(9, true),
             'sector' => $this->faker->sentence(3),
-            'subsector' => $this->faker->sentence(6),
+            'segment' => function () {
+                return factory(CompanySegment::class)->create();
+            },
         ];
     }
 }

@@ -17,8 +17,7 @@ class StoreCompanyRequest extends FormRequest
             'name' => 'required|string',
             'full_name' => 'required|string',
             'cnpj' => 'required|string',
-            'sector' => 'required|string',
-            'subsector' => 'required|string',
+            'segment_id' => 'required|integer',
         ];
     }
 }
