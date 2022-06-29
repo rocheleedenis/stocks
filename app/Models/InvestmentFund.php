@@ -21,7 +21,7 @@ class InvestmentFund extends Model
         'cnpj',
         'code',
         'type',
-        'segment',
+        'segment_id',
         'fund_manager_id',
     ];
 }

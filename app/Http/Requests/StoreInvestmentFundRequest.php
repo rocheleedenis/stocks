@@ -17,8 +17,8 @@ class StoreInvestmentFundRequest extends FormRequest
             'name' => 'required|string',
             'code' => 'required|string',
             'type' => 'required|string',
-            'segment' => 'required|string',
             'cnpj' => 'required|string',
+            'segment_id' => 'required|integer',
             'fund_manager_id' => 'required|integer',
         ];
     }
