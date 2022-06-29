@@ -13,17 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('companies', function (Blueprint $table) {
+        Schema::create('company_segments', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('sector_id')->unsigned();
             $table->bigInteger('subsector_id')->unsigned();
             $table->string('name');
-            $table->string('cnpj')->unique();
-            $table->string('full_name');
-            $table->string('subsector');
             $table->timestamps();
 
-            $table->foreign('sector_id')->references('id')->on('company_sectors');
             $table->foreign('subsector_id')->references('id')->on('company_subsectors');
         });
     }
@@ -35,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('companies');
+        Schema::dropIfExists('company_segments');
     }
 };

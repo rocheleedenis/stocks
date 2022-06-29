@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\CompanySegment;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class CompanyFactory extends Factory
@@ -14,8 +15,7 @@ class CompanyFactory extends Factory
             'name' => first_word($fullName),
             'full_name' => $fullName,
             'cnpj' => (string) $this->faker->randomNumber(9, true),
-            'sector' => $this->faker->sentence(3),
-            'subsector' => $this->faker->sentence(6),
+            'segment_id' => fn () => CompanySegment::factory()->create()->id,
         ];
     }
 }

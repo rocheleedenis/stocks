@@ -9,7 +9,7 @@ use Illuminate\Testing\Fluent\AssertableJson;
 
 class InvestmentFundControllerTest extends TestCase
 {
-    public function test_get_fund_investment_funds()
+    public function test_get_investment_funds()
     {
         InvestmentFund::factory(3)->create();
 
@@ -32,7 +32,7 @@ class InvestmentFundControllerTest extends TestCase
                 $json->where('id', $investmentFund->id)
                     ->where('name', $investmentFund->name)
                     ->where('type', $investmentFund->type)
-                    ->where('segment', $investmentFund->segment)
+                    ->where('segment_id', $investmentFund->segment_id)
                     ->etc()
             );
     }
@@ -46,7 +46,7 @@ class InvestmentFundControllerTest extends TestCase
             ->assertJson(fn (AssertableJson $json) =>
                 $json->where('name', $data['name'])
                     ->where('type', $data['type'])
-                    ->where('segment', $data['segment'])
+                    ->where('segment_id', $data['segment_id'])
                     ->etc()
             );
     }
