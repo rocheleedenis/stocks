@@ -2,10 +2,9 @@
 
 namespace Tests\Feature\Http\Controllers;
 
-use App\Models\FundManager;
-use Tests\TestCase;
 use App\Models\InvestmentFund;
 use Illuminate\Testing\Fluent\AssertableJson;
+use Tests\TestCase;
 
 class InvestmentFundControllerTest extends TestCase
 {
